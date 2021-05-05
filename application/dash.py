@@ -1,13 +1,12 @@
-import dash
-from dash.dependencies import Input, Output, State
-import dash_bootstrap_components as dbc
-import dash_core_components as dcc
 import os
 import pandas as pd
 
 #Abre bd
-entidades_s= pd.read_csv("https://raw.githubusercontent.com/fdealbam/censo2020/main/entidades2020.csv", encoding= "Latin-1")
-entidades_p= pd.read_csv("https://raw.githubusercontent.com/fdealbam/censo2020/main/entidades2020percent.csv", encoding="Latin-1")
+entidades_s= pd.read_csv("https://raw.githubusercontent.com/fdealbam/censo2020/main/entidades2020.csv")#, encoding= "Latin-1")
+entidades_p= pd.read_csv("https://raw.githubusercontent.com/fdealbam/censo2020/main/entidades2020percent.csv")#, encoding="Latin-1")
+
+#pormunicipio_fa.replace(to_replace ="*",
+#                 value =0, inplace=True)
 
 
 # Falta un identificador de la base 1) entidad 2)mpios
@@ -151,11 +150,11 @@ poblacionde15añosymasnacidaotraentidad_p             = df_p['PRESOE15_%'].sum()
 
 
 #----------------------------------------------------Variables de economía
-poblacionOcupada_p                                   = df_p['POCUPADA_%'].sum()              
-poblacionMasculinaOcupada_p                          = df_p['POCUPADA_M_%'].sum()              
-poblacionFemeninaOcupada_p                           = df_p['POCUPADA_F_%'].sum()                                             
-poblacionincactiva_p                                 = df_p['PE_INAC_%'].sum()                       
-poblaciondesocupada_p                                = df_p['PDESOCUP_%'].sum()     
+poblacionOcupada_p                                   = (df_p['POCUPADA_%'].sum()).round(1)              
+poblacionMasculinaOcupada_p                          = (df_p['POCUPADA_M_%'].sum()).round(1)              
+poblacionFemeninaOcupada_p                           = (df_p['POCUPADA_F_%'].sum()).round(1)                                             
+poblacionincactiva_p                                 = (df_p['PE_INAC_%'].sum()).round(1)                       
+poblaciondesocupada_p                                = (df_p['PDESOCUP_%'].sum()).round(1)     
 
 
 #----------------------------------------------------Variables de Religión 
@@ -169,7 +168,7 @@ poblacion15ymasanalfabeta_p                          = df_p['P15YM_AN_%'].sum()
 
 #----------------------------------------------------Variables de Hogares censales
              
-poblacionenhogaresconjefaturafemenina_p              = df_p['HOGJEF_F_%'].sum()               
+poblacionenhogaresconjefaturafemenina_p              = (df_p['HOGJEF_F_%'].sum()).round(1)               
 
 
 
