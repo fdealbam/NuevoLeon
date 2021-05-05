@@ -1715,7 +1715,7 @@ body = html.Div([
         dbc.Col(dbc.Card(card), sm={  "offset": 1, }),#Variables Vivienda
         dbc.Col(dbc.Card(card2),                      #población total
                style={#'margin-top': '-540px',       #arriba
-                      'margin-left': '40px', 
+                      'margin-left': '30px', 
                #       'width': '479px',
                #       'height': '100%',
                }, sm={  "offset": 1, })
