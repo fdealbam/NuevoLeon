@@ -1,3 +1,5 @@
+#NUEVO LEON 
+
 import os
 import pandas as pd
 
@@ -15,24 +17,26 @@ df = entidades_s[entidades_s.ENTIDAD == 19]
 df_p = entidades_p[entidades_p.ENTIDAD == 19]
 
 
-agcs = df.iloc[0]["NOM_ENT"]
+noment = df.iloc[0]["NOM_ENT"]
 
-#-------------------------------------Pob Total
+#---------------------------------Pob Total
 ptotal_s                                             = df.POBTOT.sum()
 pfemto_s                                             = df.POBFEM.sum()
 pmascu_s                                             = df.POBMAS.sum()
 
-#-------------------------------------Derechohabiencia
+
+#---------------------------------Derechohabiencia
 sinderechohabiencia_s                                = df.PSINDER.sum()
 derechoimss_s                                        = df.PDER_IMSS.sum()
 derechosegp_s                                        = df.PDER_SEGP.sum()
 derechopriv_s                                        = df.PAFIL_IPRIV.sum()
 
 
-#-------------------------------------Educación (Primaria completa cambió por analfabetismo)
+#---------------------------------Educación (Primaria completa cambió por analfabetismo)
 #poblacion15ymasanalfabeta_s                          = df.P15YM_AN.sum()
 
-#-------------------------------------Discapacidad
+
+#---------------------------------Discapacidad
 condiscapacidad_s                                    = df.PCON_DISC.sum()
  
 #Edad 
@@ -44,9 +48,11 @@ de6a11años_s                                         = df.P_6A11.sum()
 de3a5años_s                                          = df.P_3A5.sum()              
 de0a2años_s                                          = df.P_0A2.sum()              
 
+
 #Vivienda
-#-------------------------------------             Variables de Vivienda
-consanitarioyconagua_s                               = df.VPH_EXCSA.sum()        
+#---------------------------------Variables de Vivienda
+vivendashabitadas_s                                  = df.VIVTOT.sum()              
+consanitario_s                               = df.VPH_EXCSA.sum()        
 vivendashabitadas_s                                  = df.VIVTOT.sum()              
 conluzelectrica_s                                    = df.VPH_C_ELEC.sum()              
 conaguaentubada_s                                    = df.VPH_AGUADV.sum()              
@@ -62,56 +68,63 @@ continaco_s                                          = df.VPH_TINACO.sum()
 concisterna                                          = df.VPH_CISTER.sum()
 conlavadora_s                                        = df.VPH_LAVAD.sum()  
 conbici_s                                            = df.VPH_BICI.sum()
+promediodeocupantesporvivienda                       = df.PROM_OCUP.sum()
 
-
-#----------------------------------------------------Variables de Migración
+#---------------------------------Variables de Migración
 poblacionnacidaenotraentidad_s                       = df.PNACOE.sum()                
 poblacionfemeninanacidaenotraentidad_s               = df.PNACOE_F.sum()               
 poblacionde15añosymasnacidaotraentidad_s             = df.PRESOE15.sum()       
 
 
-#----------------------------------------------------Variables de economía
+#---------------------------------Variables de economía
 poblacionOcupada_s                                   = df.POCUPADA.sum()              
 poblacionMasculinaOcupada_s                          = df.POCUPADA_M.sum()              
 poblacionFemeninaOcupada_s                           = df.POCUPADA_F.sum()                                             
 poblacionincactiva_s                                 = df.PE_INAC.sum()                       
-poblaciondesocupada_s                                = df.PDESOCUP.sum()     
+poblacion12ymasdesocupada_s                          = df.PDESOCUP.sum()     
 
 
-#----------------------------------------------------Variables de Religión 
+#---------------------------------Variables de Religión 
 religioncatolica_s                                   = df.PCATOLICA.sum()              
 sinreligion_s                                        = df.PSIN_RELIG.sum()    
 evangelistasyprotestante_s                           = df.PRO_CRIEVA.sum()              
 otrasreligioness_s                                   = df.POTRAS_REL.sum()  
 
-#----------------------------------------------------Variables de Educación
-poblacion15ymasanalfabeta_s                               = df.P15YM_AN.sum()              
+#---------------------------------Variables de Educación
+poblacion15ymasanalfabeta_s                          = df.P15YM_AN.sum()
+poblacion15ymasconsecundaria_s                       = df.P15SEC_CO.sum()
+poblacion15ymasconposbasica_s                        = df.P18YM_PB.sum()
 
-#----------------------------------------------------Variables de Hogares censales
+#---------------------------------Variables de Hogares censales
              
-poblacionenhogaresconjefaturafemenina_s              = df.HOGJEF_F.sum()               
+poblacionenhogaresconjefaturafemenina_s              = df.PHOGJEF_F.sum()
+poblacionenhogaresconjefaturamasculina_s             = df.PHOGJEF_M.sum()
+poblaciontotalenhogares_s                            = df.POBHOG.sum()
 
 
+
+
+###############################################################################
 
 
 
 # PORCETAJES
-#-------------------------------------Pob Total
+#---------------------------------Pob Total
 #ptotal_p                                             = df_p['POBTOT_%'].sum()
 #pfemto_p                                             = df_p['POBFEM_%'].sum()
 #pmascu_p                                             = df_p['POBMAS_%'].sum()
 
-#-------------------------------------Derechohabiencia
+#---------------------------------Derechohabiencia
 sinderechohabiencia_p                                = df_p['PSINDER_%'].sum()
 derechoimss_p                                        = df_p['PDER_IMSS_%'].sum()
 derechosegp_p                                        = df_p['PDER_SEGP_%'].sum()
 derechopriv_p                                        = df_p['PAFIL_IPRIV_%'].sum()
 
 
-#-------------------------------------Educación (Primaria completa cambió por analfabetismo)
+#---------------------------------Educación (Primaria completa cambió por analfabetismo)
 #poblacion15ymasanalfabeta_p                           = df_p['P15YM_AN_%'].sum()
 
-#-------------------------------------Discapacidad
+#---------------------------------Discapacidad
 condiscapacidad_p                                    = df_p['PCON_DISC_%'].sum()
  
 #Edad 
@@ -124,8 +137,8 @@ de3a5años_p                                          = df_p['P_3A5_%'].sum()
 de0a2años_p                                          = df_p['P_0A2_%'].sum()              
 
 #Vivienda
-#-------------------------------------             Variables de Vivienda
-consanitarioyconagua_p                               = df_p['VPH_EXCSA_%'].sum()        
+#---------------------------------Variables de Vivienda
+consanitario_p                               = df_p['VPH_EXCSA_%'].sum()        
 vivendashabitadas_p                                  = df_p['TVIVHAB_%'].sum()              
 conluzelectrica_p                                    = df_p['VPH_C_ELEC_%'].sum()              
 conaguaentubada_p                                    = df_p['VPH_AGUADV_%'].sum()              
@@ -143,32 +156,36 @@ conlavadora_p                                        = df_p['VPH_LAVAD_%'].sum()
 conbici_p                                            = df_p['VPH_BICI_%'].sum()
 
 
-#----------------------------------------------------Variables de Migración
+#---------------------------------Variables de Migración
 poblacionnacidaenotraentidad_p                       = df_p['PNACOE_%'].sum()                
 poblacionfemeninanacidaenotraentidad_p               = df_p['PNACOE_F_%'].sum()               
 poblacionde15añosymasnacidaotraentidad_p             = df_p['PRESOE15_%'].sum()       
 
 
-#----------------------------------------------------Variables de economía
+#---------------------------------Variables de economía
 poblacionOcupada_p                                   = (df_p['POCUPADA_%'].sum()).round(1)              
 poblacionMasculinaOcupada_p                          = (df_p['POCUPADA_M_%'].sum()).round(1)              
 poblacionFemeninaOcupada_p                           = (df_p['POCUPADA_F_%'].sum()).round(1)                                             
 poblacionincactiva_p                                 = (df_p['PE_INAC_%'].sum()).round(1)                       
-poblaciondesocupada_p                                = (df_p['PDESOCUP_%'].sum()).round(1)     
+poblacion12ymasdesocupada_p                          = (df_p['PDESOCUP_%'].sum()).round(1)     
 
 
-#----------------------------------------------------Variables de Religión 
+#---------------------------------Variables de Religión 
 religioncatolica_p                                   = df_p['PCATOLICA_%'].sum()              
 sinreligion_p                                        = df_p['PSIN_RELIG_%'].sum()    
 evangelistasyprotestante_p                           = df_p['PRO_CRIEVA_%'].sum()              
 otrasreligioness_p                                   = df_p['POTRAS_REL_%'].sum()  
 
-#----------------------------------------------------Variables de Educación
+#---------------------------------Variables de Educación
 poblacion15ymasanalfabeta_p                          = df_p['P15YM_AN_%'].sum()              
+poblacion15ymasconsecundaria_p                       = df_p['P15SEC_CO_%'].sum()
+poblacion15ymasconposbasica_p                        = df_p['P18YM_PB_%'].sum()
 
-#----------------------------------------------------Variables de Hogares censales
+#---------------------------------Variables de Hogares censales
              
-poblacionenhogaresconjefaturafemenina_p              = (df_p['HOGJEF_F_%'].sum()).round(1)               
+poblacionenhogaresconjefaturafemenina_p              = (df_p['PHOGJEF_F_%'].sum()).round(1)               
+poblacionenhogaresconjefaturamasculina_p             = (df_p['PHOGJEF_M_%'].sum()).round(1)
+poblaciontotalenhogares_p                            =  df_p['POBHOG_%'].sum()
 
 
 
@@ -210,7 +227,7 @@ d2 = today.strftime("Fecha de actualización : %d-%m-%Y")
 
 
 
-#################################### Card
+################################## Card
 
 card = dbc.Card(
     dbc.CardBody(
@@ -658,15 +675,15 @@ row1 = html.Tr([
                                        "margin-right": "-120px",
                                        "margin-top": "-20px",
                                       "widht": "10px"})])]),    
-                dbc.Alert("Con sanitario y con agua", color="#E0E0E0",
+                dbc.Alert("Con sanitario", color="#E0E0E0",
                         style={"text-align": "right",
                                "margin-left": "-120px",
                               "height": "50px" }),
-                html.Td(f"{int(consanitarioyconagua_s):,}",
+                html.Td(f"{int(consanitario_s):,}",
                          style={"height": "50px",
                                "text-align": "top"}),
    
-                dbc.Alert( [(consanitarioyconagua_p),"%"] ,#"94%", 
+                dbc.Alert( [(consanitario_p),"%"] ,#"94%", 
                           color="light",
                         style={"font-size": "35px",
                                "height": "40px",
@@ -782,7 +799,7 @@ row5 = html.Tr([
                         })])
 
 
-table_body = [html.Tbody([row1, row2, row3, row4,row5])]
+table_body = [html.Tbody([row2, row1, row3, row4,row5])]
 
 
 
@@ -1011,35 +1028,35 @@ card_v_migracion = dbc.Card(
 #Seccion 8. Variables de HOGARES CENSALES
 ##########################################################################
 
-row1 = html.Tr([dbc.Alert("Población en hogares con jefa(e) de 30 a 59 años", color="#E0E0E0",), 
-                html.Td("000,000"),
-                dbc.Alert("00%", color="light",
+row1 = html.Tr([dbc.Alert("Población en hogares" , color="E0E0E0",), 
+                html.Td(f"{int(poblaciontotalenhogares_s):,}"),
+                dbc.Alert([(poblaciontotalenhogares_p),"%"], color="light",
                         style={"font-size": "35px",
                         "font-weight": 'bold',
                         "color": "#F48FB1",       
                         })])
 
 
-row2 = html.Tr([dbc.Alert("Población en hogares con jefa(e) de 60 años y más", color="#E0E0E0",), 
-                html.Td("000,000"),
-                dbc.Alert("59%", color="light",
+row2 = html.Tr([dbc.Alert("Población en hogares con jefatura masculina", color="#E0E0E0",), 
+                html.Td(f"{int(poblacionenhogaresconjefaturamasculina_s):,}"),
+                dbc.Alert([(poblacionenhogaresconjefaturamasculina_p),"%"], color="light",
                         style={"font-size": "35px",
                         "font-weight": 'bold',
                         "color": "#F48FB1",       
                         })])
 
 row3 = html.Tr([dbc.Alert("Población en hogares con jefatura femenina", color="#E0E0E0",), 
-                html.Td("000,000"),
-                dbc.Alert([(poblacionenhogaresconjefaturafemenina_p),"%"],#"59%",
+                html.Td(f"{int(poblacionenhogaresconjefaturafemenina_s):,}"),
+                dbc.Alert([(poblacionenhogaresconjefaturafemenina_p),"%"],
                           color="light",
                         style={"font-size": "35px",
                         "font-weight": 'bold',
                         "color": "#F48FB1",       
                         })])
 
-row4 = html.Tr([dbc.Alert("Población en hogares con jefa e hijos menores de 18 años", color="#E0E0E0",), 
-                html.Td("000,000"),
-                dbc.Alert("59%", color="light",
+row4 = html.Tr([dbc.Alert("Promedio de ocupantes en viviendas particulares", color="#E0E0E0",), 
+                html.Td("    "),
+                dbc.Alert(promediodeocupantesporvivienda, color="light",
                         style={"font-size": "35px",
                         "font-weight": 'bold',
                         "color": "#F48FB1",       
@@ -1082,7 +1099,7 @@ card_v_hog_cens = dbc.Card(
 #Seccion 9. Variables de DISCAPACIDAD
 ##########################################################################
 
-row1 = html.Tr([dbc.Alert("Poblacion con discapacidad", color="#E0E0E0",), 
+row1 = html.Tr([dbc.Alert("Población con discapacidad", color="#E0E0E0",), 
                 html.Td(f"{int(condiscapacidad_s):,}"),
                 dbc.Alert([(condiscapacidad_p),"%"],# "4%",
                           color="light",
@@ -1274,18 +1291,19 @@ card_economia = dbc.Card(
 card_economia_discap = dbc.Card(
     dbc.CardBody(
         [
-            html.H6("No económicamente activa con limitación física o mental", 
+            html.H6("Población de 12 años y más desocupada", 
                     style={'textAlign': 'left',
                            "color": "white",
                            "background-color": "#6A1B9A"}),
-            html.H3("000,000", style={'textAlign': 'left',
+            html.H3(f"{int(poblacion12ymasdesocupada_s):,}", 
+                    style={'textAlign': 'left',
                                       "color": "white",
                                       "background-color": "#6A1B9A"}),
             html.Br(),
             html.Br(),
             
             dbc.ButtonGroup(html.Span([
-                html.H1(className="fas fa-wheelchair", 
+                html.H1(className="fas fa-user-minus", 
                         style={"background-color": "#6A1B9A",
                                "color":"white",
                                "font-size": "110px",
@@ -1296,7 +1314,7 @@ card_economia_discap = dbc.Card(
             html.Br(),
             html.Br(),
             
-            html.H2("00%", 
+            html.H2([(poblacion12ymasdesocupada_p),"%"], 
                   style={'textAlign': 'center',
                          "color": "white",
                             #"height": "7px",
@@ -1469,27 +1487,26 @@ card_v_religionAA = dbc.Card(
 ##########################################################################
 
 
-row1edu = html.Tr([dbc.Alert("De 15 años y más alfabeta", color="#E0E0E0",), 
-                html.Td("000,000"),
-                dbc.Alert("00%", color="light",
-                        style={"font-size": "35px",
-                        "font-weight": 'bold',
-                        "color": "#81C784",       
-                        })])
-
-
-row2edu = html.Tr([dbc.Alert("De 15 años y más con educación básica completa", color="#E0E0E0",), 
-                html.Td("000,000"),
-                dbc.Alert("00%", color="light",
-                        style={"font-size": "35px",
-                        "font-weight": 'bold',
-                        "color": "#81C784",       
-                        })])
-
-row3edu = html.Tr([dbc.Alert("De 15 años y más analfabeta", color="#E0E0E0",), 
+row1edu = html.Tr([dbc.Alert("De 15 años y más analfabeta", color="#E0E0E0",), 
                 html.Td(f"{int(poblacion15ymasanalfabeta_s):,}"),
-                dbc.Alert([(poblacion15ymasanalfabeta_p),"%"],#"59%",
-                          color="light",
+                dbc.Alert([(poblacion15ymasanalfabeta_p),"%"], color="light",
+                        style={"font-size": "35px",
+                        "font-weight": 'bold',
+                        "color": "#81C784",       
+                        })])
+
+
+row2edu = html.Tr([dbc.Alert("De 15 años y más con secundaria completa", color="#E0E0E0",), 
+                html.Td(f"{int(poblacion15ymasconsecundaria_s):,}"),
+                dbc.Alert([(poblacion15ymasconsecundaria_p),"%"], color="light",
+                        style={"font-size": "35px",
+                        "font-weight": 'bold',
+                        "color": "#81C784",       
+                        })])
+
+row3edu = html.Tr([dbc.Alert("De 18 años y más con educación posbásica", color="#E0E0E0",), 
+                html.Td(f"{int(poblacion15ymasconposbasica_s):,}"),
+                dbc.Alert([(poblacion15ymasconposbasica_p),"%"],color="light",
                         style={"font-size": "35px",
                         "font-weight": 'bold',
                         "color": "#81C784",       
@@ -1640,25 +1657,21 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.
 
 
 # make a reuseable navitem for the different examples
-nav_item1 = dbc.NavItem(dbc.NavLink("Equipo responsable", href="https://innovation-learning.herokuapp.com/"))
-nav_item2 = dbc.NavItem(dbc.NavLink("Link2", href="#"))
-nav_item3 = dbc.NavItem(dbc.NavLink("Link3", href="#"))
-nav_item4 = dbc.NavItem(dbc.NavLink("Link4", href="#"))
+nav_item1 = dbc.NavItem(dbc.NavLink("Inicio", href="https://plataformacenso2020.herokuapp.com/"))
+nav_item2 = dbc.NavItem(dbc.NavLink("Entidades", href="#"))
+nav_item3 = dbc.NavItem(dbc.NavLink("Metrópolis", href="#"))
 
 
 
 default = dbc.NavbarSimple(
-    children=[nav_item1,nav_item2,nav_item3,nav_item4, ],
-    brand=" ",
+    children=[nav_item1,nav_item2,nav_item3],
+    brand="MENU",
     brand_href="#",
     sticky="top",
     className="mb-5",
 )
 
 body = html.Div([
-     html.Br(),
-       html.Br(),
-       html.Br(),
     dbc.Row(
            [
                dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/CamaraDiputados/blob/main/application/static/logocamara.jfif?raw=true",
@@ -1676,7 +1689,7 @@ body = html.Div([
                       ], justify= "center"),               
     dbc.Row(
            [
-               dbc.Col(html.H1(agcs,
+               dbc.Col(html.H1(noment,
                         style={ "size": 6, "offset":2,
                               "font-size": "35px",
                                "height": "40px",
@@ -1715,7 +1728,7 @@ body = html.Div([
         dbc.Col(dbc.Card(card), sm={  "offset": 1, }),#Variables Vivienda
         dbc.Col(dbc.Card(card2),                      #población total
                style={#'margin-top': '-540px',       #arriba
-                      'margin-left': '30px', 
+                      'margin-left': '40px', 
                #       'width': '479px',
                #       'height': '100%',
                }, sm={  "offset": 1, })
@@ -1908,7 +1921,7 @@ body = html.Div([
                ], justify="start",),
      dbc.Row([    
            dbc.Col(html.H5([dbc.Badge("Equipo responsable", 
-                          href="https://raw.githubusercontent.com/fdealbam/feminicidios/main/Autores.pdf",
+                          href="https://innovation-learning.herokuapp.com/",
                                      )]),
                   width={'size': 3,  "offset": 4}),
                        ], justify="start",),
@@ -1930,3 +1943,5 @@ app.layout = html.Div(
 
 if __name__ == '__main__':
     app.run_server(use_reloader = False)
+    
+
