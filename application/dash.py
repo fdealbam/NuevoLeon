@@ -854,55 +854,102 @@ card3 = dbc.Card(
 card2p3 = dbc.Card(
     dbc.CardBody(
         [
-         dbc.Button((["", html.H1(className="fas fa-wifi", style={"color": "black",
+         dbc.Button((["", html.H3(className="fas fa-wifi", style={"color": "black",
                                                                  "background-color": "light"}),
                  html.H6(" Con internet ",
                         style={"color":"black",
+                               "font-size":10,
                                 "background-color": "light"}),
-                 html.H1([(coninternet_p),"%"],#"97%",
+                 html.H4([(coninternet_p),"%"],#"97%",
                         style={"color":"#FBC02D",
                                 "background-color": "light"}),
                  html.P(f"{int(coninternet_s):,}", style={"font-size":10}),                      
         ]),style={ "background-color": "light"}),
 
             
-         dbc.Button((["", html.H1(className="fas fa-tv", 
+         dbc.Button((["", html.H3(className="fas fa-tv", 
                                   style={"color": "lightgray",
                                          "background-color": "light"}),
                  html.H6(" Con televisor ", 
                          style={"color":"lightgray",
+                                 "font-size":10,
                                 "background-color": "light"}),
-                 html.H1([(contelevisor_p),"%"],#"97%",  
+                 html.H4([(contelevisor_p),"%"],#"97%",  
                          style={"color":"#FBC02D",
                                 "background-color": "light"}),
                  html.P(f"{int(contelevisor_s):,}",  style={"font-size":10}),                      
         ]),style={ "background-color": "light"}),
 
-         dbc.Button((["", html.H1(className="fas fa-laptop", style={"color": "lightgray",
+         dbc.Button((["", html.H3(className="fas fa-laptop", style={"color": "lightgray",
                                                                    "background-color": "light"}),
                  html.H6(" Con computadora ",
                          style={"color":"lightgray",
+                                 "font-size":10,
                                 "background-color": "light"}),
-                 html.H1([(concomputadora_p),"%"],#"97%",
+                 html.H4([(concomputadora_p),"%"],#"97%",
                         style={"color":"#FBC02D",
                                 "background-color": "light"}),# 
                  html.P(f"{int(concomputadora_s):,}", style={"font-size":10}),                      
         ]),style={ "background-color": "light"}),
             
 
-         dbc.Button((["", html.H1(className="fas fa-mobile-alt", style={"color": "black",
+         dbc.Button((["", html.H3(className="fas fa-mobile-alt", style={"color": "black",
                                                                        "background-color": "light"}),
                  html.H6(" Con celular ",
                         style={"color":"black",
+                                "font-size":10,
                                 "background-color": "light"}),
-                 html.H1([(concelular_p),"%"],#"97%",
+                 html.H4([(concelular_p),"%"],#"97%",
                         style={"color":"#FBC02D",
                                 "background-color": "light"}),
                  html.P(f"{int(concelular_s):,}", style={"font-size":10}),                      
         ]),style={ "background-color": "light"}),
+        
+#poner aqui refrigerador            
+         dbc.Button((["", html.H3(className="fas fa-mobile-alt", style={"color": "black",
+                                                                       "background-color": "light"}),
+                 html.H6(" Con refrigerador ",
+                        style={"color":"black",
+                                "font-size":10,
+                                "background-color": "light"}),
+                 html.H4([(conrefrigerador_p),"%"],#"97%",
+                        style={"color":"#FBC02D",
+                                "background-color": "light"}),
+                 html.P(f"{int(conrefrigerador_s):,}", style={"font-size":10}),                      
+        ]),style={ "background-color": "light"}),
+            
+
+#poner aqui lavadora            
+         dbc.Button((["", html.H3(className="fas fa-washer", style={"color": "black",
+                                                                       "background-color": "light"}),
+                 html.H6(" Con lavadora ",
+                        style={"color":"black",
+                                "font-size":10,
+                                "background-color": "light"}),
+                 html.H4([(conlavadora_p),"%"],#"97%",
+                        style={"color":"#FBC02D",
+                                "background-color": "light"}),
+                 html.P(f"{int(conlavadora_s):,}", style={"font-size":10}),                      
+        ]),style={ "background-color": "light"}),
+
+
+#poner aqui bicicleta            
+         dbc.Button((["", html.H2(className="fas fa-bicycle", style={"color": "black",
+                                                                       "background-color": "light"}),
+                 html.H6(" Con bicicleta",
+                        style={"color":"black",
+                                "font-size":10,
+                                "background-color": "light"}),
+                 html.H4([(conbici_p),"%"],#"97%",
+                        style={"color":"#FBC02D",
+                                "background-color": "light"}),
+                 html.P(f"{int(conbici_s):,}", style={"font-size":10}),                      
+        ]),style={ "background-color": "light"}),
             
      
-        ]), style={"width": "50rem", 
+        ]), style={"width": "45rem",
+                   "margin-left": "46.5px",
+                   "margin-right": "46.5px",
                    "border": "0",
                    "background-color": "light",
                   "outline": "white"
@@ -1673,10 +1720,10 @@ nav_item3 = dbc.NavItem(dbc.NavLink("Metrópolis", href="#"))
 
 default = dbc.NavbarSimple(
     children=[nav_item1,nav_item2,nav_item3],
-    brand="MENU",
+    brand="MENU",  style={"font-size": "12px"},
     brand_href="#",
     sticky="top",
-    className="mb-5",
+    className="mb-12",
 )
 
 body = html.Div([
@@ -1952,4 +1999,3 @@ app.layout = html.Div(
 
 if __name__ == '__main__':
     app.run_server(use_reloader = False)
- 
