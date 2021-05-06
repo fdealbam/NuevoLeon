@@ -1,5 +1,7 @@
 #NUEVO LEON 
 
+#NUEVO LEON 
+
 import os
 import pandas as pd
 
@@ -19,89 +21,88 @@ df_p = entidades_p[entidades_p.ENTIDAD == 19]
 
 noment = df.iloc[0]["NOM_ENT"]
 
-#---------------------------------Pob Total
-ptotal_s                                             = df.POBTOT.sum()
-pfemto_s                                             = df.POBFEM.sum()
-pmascu_s                                             = df.POBMAS.sum()
+#-------------------------------------Pob Total
+ptotal_s                                             = df.POBTOT.sum()      # población total  
+pfemto_s                                             = df.POBFEM.sum()      # población femenina 
+pmascu_s                                             = df.POBMAS.sum()      # población masculina 
+
+#-------------------------------------Derechohabiencia
+sinderechohabiencia_s                                = df.PSINDER.sum()      # Población sin afiliación a servicios de salud  
+derechoimss_s                                        = df.PDER_IMSS.sum()    # Población afiliada a servicios de salud en el IMSS  
+derechosegp_s                                        = df.PDER_SEGP.sum()    # Población afiliada a servicios de salud en el Instituto de Salud para el Bienestar
+derechopriv_s                                        = df.PAFIL_IPRIV.sum()  # Población afiliada a servicios de salud en una institución privada 
 
 
-#---------------------------------Derechohabiencia
-sinderechohabiencia_s                                = df.PSINDER.sum()
-derechoimss_s                                        = df.PDER_IMSS.sum()
-derechosegp_s                                        = df.PDER_SEGP.sum()
-derechopriv_s                                        = df.PAFIL_IPRIV.sum()
+#-------------------------------------Educación (Primaria completa cambió por analfabetismo)
+poblacion15ymasanalfabeta_s                          = df.P15YM_AN.sum()    # Población de 15 años y más analfabeta             
+poblacion15ymasconsecundaria_s                       = df.P15SEC_CO.sum()   # Población de 15 años y más con secundaria completa
+poblacion15ymasconposbasica_s                        = df.P18YM_PB.sum()    # Población de 18 años y más con educación posbásica
+#Agregadas nuevas variables de educación :)
 
 
-#---------------------------------Educación (Primaria completa cambió por analfabetismo)
-#poblacion15ymasanalfabeta_s                          = df.P15YM_AN.sum()
 
-
-#---------------------------------Discapacidad
-condiscapacidad_s                                    = df.PCON_DISC.sum()
+#-------------------------------------Discapacidad|
+condiscapacidad_s                                    = df.PCON_DISC.sum()    # Población con discapacidad
  
 #Edad 
-de60añosymas_s                                       = df.P_60YMAS.sum()              
-de15a64años_s                                        = df.POB15_64.sum()              
-de15A17años_s                                        = df.P_15A17.sum()              
-de12a14años_s                                        = df.P_12A14.sum()              
-de6a11años_s                                         = df.P_6A11.sum()              
-de3a5años_s                                          = df.P_3A5.sum()              
-de0a2años_s                                          = df.P_0A2.sum()              
-
+de60añosymas_s                                       = df.P_60YMAS.sum()     # población de 60 y más          
+de15a64años_s                                        = df.POB15_64.sum()     # población de 15 a 64 años         
+de15A17años_s                                        = df.P_15A17.sum()      # población de 15 a 17 años         
+de12a14años_s                                        = df.P_12A14.sum()      # población de 12 a 14 años         
+de6a11años_s                                         = df.P_6A11.sum()       # población de 6 a 11 años       
+de3a5años_s                                          = df.P_3A5.sum()        # población de 3 a 5 años      
+de0a2años_s                                          = df.P_0A2.sum()        # población de 0 a 2 años      
 
 #Vivienda
-#---------------------------------Variables de Vivienda
-vivendashabitadas_s                                  = df.VIVTOT.sum()              
-consanitario_s                               = df.VPH_EXCSA.sum()        
-vivendashabitadas_s                                  = df.VIVTOT.sum()              
-conluzelectrica_s                                    = df.VPH_C_ELEC.sum()              
-conaguaentubada_s                                    = df.VPH_AGUADV.sum()              
-conundorm_s                                          = df.VPH_1DOR.sum()                            
-condrenaje_s                                         = df.VPH_DRENAJ.sum()              
-contelevisor_s                                       = df.VPH_TV.sum()                        
-conrefrigerador_s                                    = df.VPH_REFRI.sum()                   
-constreaming_s                                       = df.VPH_SPMVPI.sum()              
-coninternet_s                                        = df.VPH_INTER.sum()                            
-concomputadora_s                                     = df.VPH_PC.sum()              
-concelular_s                                         = df.VPH_CEL.sum()  
-continaco_s                                          = df.VPH_TINACO.sum() 
-concisterna                                          = df.VPH_CISTER.sum()
-conlavadora_s                                        = df.VPH_LAVAD.sum()  
-conbici_s                                            = df.VPH_BICI.sum()
-promediodeocupantesporvivienda                       = df.PROM_OCUP.sum()
-
-#---------------------------------Variables de Migración
-poblacionnacidaenotraentidad_s                       = df.PNACOE.sum()                
-poblacionfemeninanacidaenotraentidad_s               = df.PNACOE_F.sum()               
-poblacionde15añosymasnacidaotraentidad_s             = df.PRESOE15.sum()       
+#-------------------------------------             Variables de Vivienda
+consanitario_s                                       = df.VPH_EXCSA.sum()    # Viviendas particulares habitadas que disponen de excusado o sanitario     
+vivendashabitadas_s                                  = df.VIVTOT.sum()       # Total de viviendas        
+conluzelectrica_s                                    = df.VPH_C_ELEC.sum()   # Viviendas particulares habitadas que disponen de energía eléctrica             
+conaguaentubada_s                                    = df.VPH_AGUADV.sum()   # Viviendas particulares habitadas que disponen de agua entubada en el ámbito de la viviendas           
+conundorm_s                                          = df.VPH_1DOR.sum()     # Viviendas particulares habitadas con un dormitorio                        
+condrenaje_s                                         = df.VPH_DRENAJ.sum()   # Viviendas particulares habitadas que disponen de drenaje            
+contelevisor_s                                       = df.VPH_TV.sum()       # Viviendas particulares habitadas que disponen de televisor                  
+conrefrigerador_s                                    = df.VPH_REFRI.sum()    # Viviendas particulares habitadas que disponen de refrigerador                
+constreaming_s                                       = df.VPH_SPMVPI.sum()   # Viviendas particulares habitadas que disponen de servicio de películas, música o videos de paga por Internet           
+coninternet_s                                        = df.VPH_INTER.sum()    # Viviendas particulares habitadas que disponen de Internet                         
+concomputadora_s                                     = df.VPH_PC.sum()       # Viviendas particulares habitadas que disponen de computadora, laptop o tablet       
+concelular_s                                         = df.VPH_CEL.sum()      # Viviendas particulares habitadas que disponen de teléfono celular
+continaco_s                                          = df.VPH_TINACO.sum()   # Viviendas particulares habitadas que disponen de tinaco 
+concisterna                                          = df.VPH_CISTER.sum()   # Viviendas particulares habitadas que disponen de cisterna o aljibe
+conlavadora_s                                        = df.VPH_LAVAD.sum()    # Viviendas particulares habitadas que disponen de lavadora    
+conbici_s                                            = df.VPH_BICI.sum()     # Viviendas particulares habitadas que disponen de bicicleta como medio de transporte 
 
 
-#---------------------------------Variables de economía
-poblacionOcupada_s                                   = df.POCUPADA.sum()              
-poblacionMasculinaOcupada_s                          = df.POCUPADA_M.sum()              
-poblacionFemeninaOcupada_s                           = df.POCUPADA_F.sum()                                             
-poblacionincactiva_s                                 = df.PE_INAC.sum()                       
-poblacion12ymasdesocupada_s                          = df.PDESOCUP.sum()     
+#----------------------------------------------------Variables de Migración
+poblacionnacidaenotraentidad_s                       = df.PNACOE.sum()       # Población nacida en otra entidad                 
+poblacionfemeninanacidaenotraentidad_s               = df.PNACOE_F.sum()     # Población femenina nacida en la entidad               
+poblacionde15añosymasnacidaotraentidad_s             = df.PRESOE15.sum()     # Población de 5 años y más residente en otra entidad en marzo de 2015      
 
 
-#---------------------------------Variables de Religión 
-religioncatolica_s                                   = df.PCATOLICA.sum()              
-sinreligion_s                                        = df.PSIN_RELIG.sum()    
-evangelistasyprotestante_s                           = df.PRO_CRIEVA.sum()              
-otrasreligioness_s                                   = df.POTRAS_REL.sum()  
+#----------------------------------------------------Variables de economía
+poblacionOcupada_s                                   = df.POCUPADA.sum()     # población ocupada          
+poblacionMasculinaOcupada_s                          = df.POCUPADA_M.sum()   # Población femenina de 12 años y más desocupada           
+poblacionFemeninaOcupada_s                           = df.POCUPADA_F.sum()   # Población masculina de 12 años y más ocupada                                           
+poblacion12ymasdesocupada_s                          = df.PDESOCUP.sum()     # Población de 12 años y más desocupada  
 
-#---------------------------------Variables de Educación
-poblacion15ymasanalfabeta_s                          = df.P15YM_AN.sum()
-poblacion15ymasconsecundaria_s                       = df.P15SEC_CO.sum()
-poblacion15ymasconposbasica_s                        = df.P18YM_PB.sum()
 
-#---------------------------------Variables de Hogares censales
+#----------------------------------------------------Variables de Religión 
+religioncatolica_s                                   = df.PCATOLICA.sum()    # Población con religión católica           
+sinreligion_s                                        = df.PSIN_RELIG.sum()   # Población sin religión o sin adscripción religiosa  
+evangelistasyprotestante_s                           = df.PRO_CRIEVA.sum()   # Población con grupo religioso protestante/ cristiano evangélico              
+otrasreligioness_s                                   = df.POTRAS_REL.sum()   # Población con otras religiones diferentes a las anteriores  
+
+#----------------------------------------------------Variables de Educación
+poblacion15ymasanalfabeta_s                          = df.P15YM_AN.sum()     # Población de 15 años y más analfabeta          
+
+#----------------------------------------------------Variables de Hogares censales
              
-poblacionenhogaresconjefaturafemenina_s              = df.PHOGJEF_F.sum()
-poblacionenhogaresconjefaturamasculina_s             = df.PHOGJEF_M.sum()
-poblaciontotalenhogares_s                            = df.POBHOG.sum()
+poblacionenhogaresconjefaturafemenina_s              = df.HOGJEF_F.sum()     # Hogares censales con persona de referencia mujer             
+poblacionenhogaresconjefaturamasculina_s             = df.PHOGJEF_M.sum()    # Hogares censales con persona de referencia hombre
+poblaciontotalenhogares_s                            = df.POBHOG.sum()       # Población en hogares censales
+#agregados:jef masc y total de hogares
 
-
+promediodeocupantesporvivienda                      =  df.PROM_OCUP.sum()    #Promedio de ocupantes en viviendas particulares habitadas
 
 
 ###############################################################################
@@ -138,7 +139,7 @@ de0a2años_p                                          = df_p['P_0A2_%'].sum()
 
 #Vivienda
 #---------------------------------Variables de Vivienda
-consanitario_p                               = df_p['VPH_EXCSA_%'].sum()        
+consanitario_p                                       = df_p['VPH_EXCSA_%'].sum()        
 vivendashabitadas_p                                  = df_p['TVIVHAB_%'].sum()              
 conluzelectrica_p                                    = df_p['VPH_C_ELEC_%'].sum()              
 conaguaentubada_p                                    = df_p['VPH_AGUADV_%'].sum()              
@@ -166,7 +167,7 @@ poblacionde15añosymasnacidaotraentidad_p             = df_p['PRESOE15_%'].sum()
 poblacionOcupada_p                                   = (df_p['POCUPADA_%'].sum()).round(1)              
 poblacionMasculinaOcupada_p                          = (df_p['POCUPADA_M_%'].sum()).round(1)              
 poblacionFemeninaOcupada_p                           = (df_p['POCUPADA_F_%'].sum()).round(1)                                             
-poblacionincactiva_p                                 = (df_p['PE_INAC_%'].sum()).round(1)                       
+poblacioninactiva_p                                 = (df_p['PE_INAC_%'].sum()).round(1)                       
 poblacion12ymasdesocupada_p                          = (df_p['PDESOCUP_%'].sum()).round(1)     
 
 
@@ -631,7 +632,7 @@ card26 = dbc.Card(
 card27 = dbc.Card(
     dbc.CardBody(
         [
-            html.H6("De 18 años y más", 
+            html.H6("De 60 años y más", #Aqui cambio antes: "De 18 años y más"
                     style={'textAlign': 'left',
                            "color": "white",
                             "height": "7px",
@@ -972,7 +973,7 @@ card_migra2 = dbc.Card(
 card_migra3 = dbc.Card(
     dbc.CardBody(
         [
-            html.H6("Población de 5 años y mas nacida en otra entidad",  #VERIFICAR "en marzo de 2015"
+            html.H6("Población de 5 años y más residente en otra entidad en marzo de 2015", # cambio: Población de 5 años y mas nacida en otra entidad otranota: VERIFICAR "en marzo de 2015"
                     style={'textAlign': 'left',
                            "color": "white",
                             "height": "7px",
@@ -1242,12 +1243,12 @@ card_econom4 = dbc.Card(
                            "color": "white",
                             "height": "7px",
                           "background-color": "#0097A7"}),
-            html.H5(f"{int(poblacionincactiva_s):,}", 
+            html.H5(f"{int(poblacioninactiva_s):,}", 
                     style={'textAlign': 'left',
                             "height": "7px",
                            "color": "white",
                           "background-color": "#0097A7"}),
-            html.H2([(poblacionincactiva_p),"%"],#"95%", 
+            html.H2([(poblacioninactiva_p),"%"],#"95%", 
                   style={'textAlign': 'right',
                          "color": "white",
                             "height": "7px",
@@ -1943,5 +1944,4 @@ app.layout = html.Div(
 
 if __name__ == '__main__':
     app.run_server(use_reloader = False)
-    
-
+ 
