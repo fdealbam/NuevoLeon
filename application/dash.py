@@ -1243,7 +1243,7 @@ card_econom4 = dbc.Card(
                            "color": "white",
                             "height": "7px",
                           "background-color": "#0097A7"}),
-            html.H5(f"{int(poblacioninactiva_s):,}", 
+            html.H5(f"{int(poblacion12ymasdesocupada_s):,}", 
                     style={'textAlign': 'left',
                             "height": "7px",
                            "color": "white",
