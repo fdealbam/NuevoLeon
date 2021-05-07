@@ -920,9 +920,9 @@ card2p3 = dbc.Card(
             
 
 #poner aqui lavadora            
-         dbc.Button((["", html.H3(className="fas fa-washer", style={"color": "black",
+         dbc.Button((["", html.H3(className="fas fa-bath", style={"color": "black",
                                                                        "background-color": "light"}),
-                 html.H6(" Con lavadora ",
+                      html.H6(" Con lavadora ",
                         style={"color":"black",
                                 "font-size":10,
                                 "background-color": "light"}),
