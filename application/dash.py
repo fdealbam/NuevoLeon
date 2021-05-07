@@ -1733,33 +1733,34 @@ body = html.Div([
                         ),width ={ "size": 1,  "offset": 1,
                                   "height": "5px"}),
                dbc.Col(html.H4("Reporte estadístico básico de ",
-                        style={'offset' : 0, "size": 6,
-                              "margin-left": "-122px",
+                        style={'offset' : 0, "size": 5,
+                              #"margin-left": "-142px",
                                "font-size": "12px",
                               "color": "grey",
                                "height": "5px",
-                              'textAlign': 'center',
+                              #'textAlign': 'center',
                                #"font-weight": 'bold',
                                "font-family": "Montserrat"
                               })),
-                      ], justify= "center"),               
+                      ], justify= "start"),               
     dbc.Row(
            [
                dbc.Col(html.H1(noment,
-                        style={ "size": 6, "offset":2,
-                              "font-size": "35px",
+                        style={ "offset":2, "size": 5, 
+                              "margin-left": "162px",
+                               "font-size": "35px",
                                "height": "40px",
                               "color": "dark",
-                              'textAlign': 'center',
+                              #'textAlign': 'center',
                                #"font-weight": 'bold',
                                "font-family": "Montserrat",
                               },)),
-                      ], justify= "center"),            
+                      ], justify= "start"),            
     
     #Cintillo 00    
     dbc.Row(
            [
-               dbc.Col(html.H6(d2),           #Fecha de actualización
+               dbc.Col(html.H6(" "),           #Fecha de actualización
                width={'size' : "auto",
                       'offset' : 1,
                       #'textAlign': 'center',
@@ -1767,13 +1768,17 @@ body = html.Div([
             ], justify= "center"),
     dbc.Row(
            [
-               dbc.Col(html.H6("Fuente: Censo 2020, INEGI"),
-                        width={'size' : "auto",
-                               #"offset":1,
-                              'textAlign': 'center',
-                               "color": "grey",
-}),
-            ], justify= "center"),
+               dbc.Col(html.H6("Fuente: Censo 2020, INEGI",
+                        style={ "offset":2, "size": 5, 
+                              "margin-left": "162px",
+                               "font-size": "5px",
+                               "height": "40px",
+                              "color": "dark",
+                              #'textAlign': 'center',
+                               #"font-weight": 'bold',
+                               "font-family": "Montserrat",
+                              },)),
+                      ], justify= "start"),            
                
     html.Br(),
     
@@ -1999,3 +2004,4 @@ app.layout = html.Div(
 
 if __name__ == '__main__':
     app.run_server(use_reloader = False)
+ 
