@@ -1694,6 +1694,38 @@ card_v_derechohab = dbc.Card(
            "fill" : "orange"},)
     
     
+    #### graph de hogares censales 
+
+val1fem= df.PHOGJEF_F.sum()
+val2hom= df.PHOGJEF_M.sum()
+
+hogcensjefgender = px.pie(df, 
+                          values= [val1fem, val2hom], 
+                          names=[df.NOM_ENT,df.ENTIDAD],
+                color_discrete_sequence= px.colors.sequential.Blues, 
+                          hole=.5)
+
+hogcensjefgender.update_layout(paper_bgcolor='rgba(0,0,0,0)',
+                  plot_bgcolor='rgba(0,0,0,0)',
+                  uniformtext_minsize=6,
+                  uniformtext_mode='hide',
+                  autosize=True,
+                  title_font_size = 6,
+                  font_color="white",
+                  title_font_color="white",
+                  margin = dict(autoexpand= False,),
+                          showlegend=False),
+    
+colors = ['Blues']
+
+hogcensjefgender.update_traces(rotation=220,
+                              pull= [0.1, 0.1],      
+                               marker=dict(colors=colors))
+
+
+
+
+    
     
     
     
@@ -1963,6 +1995,16 @@ body = html.Div([
      ], no_gutters= True, justify= "start",
      className="blockquote",),
 
+
+     dbc.Row(
+           [
+           dbc.Col(dcc.Graph(figure=hogcensjefgender),
+                    style={'size' : 1, "offset":0,
+                          "margin-top": "-90px"}), 
+                    
+            ], #align='start', 
+        justify ="start"),    
+    
     html.Br(),
     html.Br(),
     html.Br(),
@@ -2005,3 +2047,4 @@ app.layout = html.Div(
 if __name__ == '__main__':
     app.run_server(use_reloader = False)
  
+
