@@ -1787,9 +1787,12 @@ body = html.Div([
                          #href="https://censo2020-mexico.herokuapp.com/",
                                style={"background-color": "transparent"}),
                       md={"size": 3,},
-                      style= {"margin-top": "-32px", 
+                      style= {
+                         
+                          "margin-top": "-32px", 
                              "display": "block", "position": "relative",
                               "inline": "block",
+                              "column-break-inside": "avoid",
                               "margin-left": "-600px",
                               "margin-bottom": "-230px"
                              }),
@@ -2047,16 +2050,16 @@ body = html.Div([
            dbc.Col(html.H5([dbc.Badge("Equipo responsable", 
                           href="https://innovation-learning.herokuapp.com/",
                                      )]),
-                  width={'size': 3,  "offset": 4}),
+                  width={'size': 3,  "offset": 4,
+                         #"bg-text" :  "pablo está loquito",
+                        }),
                        ], justify="start",),
     html.Br(),
     html.Br(),
     html.Br(),
 
-    
 
-    
-    html.Br(),
+     html.Br(),
         
             ])
     
