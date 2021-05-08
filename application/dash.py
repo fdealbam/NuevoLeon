@@ -1773,6 +1773,7 @@ body = html.Div([
                                   "height": "5px"}),
                dbc.Col(html.H4("Reporte estadístico básico de ",
                         style={'offset' : 0, "size": 5,
+                               
                               #"margin-left": "-142px",
                                "font-size": "12px",
                               "color": "grey",
@@ -1781,6 +1782,19 @@ body = html.Div([
                                #"font-weight": 'bold',
                                "font-family": "Montserrat"
                               })),
+            #mapa de la entidad   
+            dbc.Col(dbc.Button(dbc.CardImg(src="https://github.com/fdealbam/censo2020/blob/b94700a88ff29ebb35f6bc6e578e5c30a0266f40/1nleona.png?raw=true"),
+                         #href="https://censo2020-mexico.herokuapp.com/",
+                               style={"background-color": "transparent"}),
+                      md={"size": 3,},
+                      style= {"margin-top": "-32px", 
+                             "display": "block", "position": "relative",
+                              "inline": "block",
+                              "margin-left": "-600px",
+                              "margin-bottom": "-230px"
+                             }),
+               
+               
                       ], justify= "start"),               
     dbc.Row(
            [
@@ -1810,7 +1824,7 @@ body = html.Div([
                dbc.Col(html.H6("Fuente: Censo 2020, INEGI",
                         style={ "offset":2, "size": 5, 
                               "margin-left": "162px",
-                               "font-size": "5px",
+                               "font-size": "10px",
                                "height": "40px",
                               "color": "dark",
                               #'textAlign': 'center',
