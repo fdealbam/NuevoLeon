@@ -1768,6 +1768,9 @@ default = dbc.NavbarSimple(
 )
 
 body = html.Div([
+ 
+ html.Br(),
+ 
     dbc.Row(
            [
                dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/CamaraDiputados/blob/main/application/static/logocamara.jfif?raw=true",
