@@ -908,7 +908,7 @@ card2p3 = dbc.Card(
          dbc.Button((["", html.H3(dbc.CardImg(src= "https://raw.githubusercontent.com/fdealbam/nuevoleon/main/application/static/refrigerator-light.svg?raw=true", 
                                 style={"color": "black",
                                        "height" :"25px",
-                                      "background-clor": "light"})),
+                                      "background-color": "light"})),
 
                  html.H6(" Con refrigerador ",
                         style={"color":"black",
