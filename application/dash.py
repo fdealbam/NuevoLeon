@@ -924,19 +924,19 @@ card2p3 = dbc.Card(
             
 
 #poner aqui lavadora            
-         dbc.Button((["", html.H3(dbc.CardImg(src= "https://raw.githubusercontent.com/fdealbam/censo2020/main/laundry.svg?raw=true", 
-                                style={"color": "black",
-                                       "height" :"25px",
-                                      "background-clor": "light"})),
-                      html.H6(" Con lavadora ",
-                        style={"color":"black",
-                                "font-size":10,
-                                "background-color": "light"}),
-                 html.H4([(conlavadora_p),"%"],#"97%",
-                        style={"color":"#FBC02D",
-                                "background-color": "light"}),
-                 html.P(f"{int(conlavadora_s):,}", style={"font-size":10}),                      
-        ]),style={ "background-color": "light"}),
+ #       dbc.Button((["", html.H3(dbc.CardImg(src= "https://raw.githubusercontent.com/fdealbam/censo2020/main/laundry.svg?raw=true", 
+ #                              style={"color": "black",
+ #                                     "height" :"25px",
+ #                                    "background-clor": "light"})),
+ #                    html.H6(" Con lavadora ",
+ #                      style={"color":"black",
+ #                              "font-size":10,
+ #                              "background-color": "light"}),
+ #               html.H4([(conlavadora_p),"%"],#"97%",
+ #                      style={"color":"#FBC02D",
+ #                              "background-color": "light"}),
+ #               html.P(f"{int(conlavadora_s):,}", style={"font-size":10}),                      
+ #      ]),style={ "background-color": "light"}),
 
 
 #poner aqui bicicleta            
