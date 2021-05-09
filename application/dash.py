@@ -905,11 +905,10 @@ card2p3 = dbc.Card(
                  html.P(f"{int(concelular_s):,}", style={"font-size":10}),                      
         ]),style={ "background-color": "light"}),
         
-#poner aqui refrigerador            
-         dbc.Button((["", html.H3(dbc.CardImg(src= "https://raw.githubusercontent.com/fdealbam/censo2020/main/refrigerator.svg?raw=true", 
+#poner aqui refrigerador  
+         dbc.Button((["", html.H3(dbc.CardImg(src= "https://raw.githubusercontent.com/fdealbam/nuevoleon/main/application/static/refrigerator-light.svg?raw=true", 
                                 style={"color": "black",
-                                       "height" :"30px",
-                                       "width": "30px",
+                                       "height" :"25px",
                                       "background-clor": "light"})),
 
                  html.H6(" Con refrigerador ",
@@ -924,19 +923,19 @@ card2p3 = dbc.Card(
             
 
 #poner aqui lavadora            
-        dbc.Button((["", html.H3(dbc.CardImg(src= "https://raw.githubusercontent.com/fdealbam/censo2020/main/laundry.svg?raw=true", 
-                               style={"color": "black",
-                                      "height" :"25px",
-                                     "background-clor": "light"})),
-                     html.H6(" Con lavadora ",
-                       style={"color":"black",
-                               "font-size":10,
-                               "background-color": "light"}),
-                html.H4([(conlavadora_p),"%"],#"97%",
-                       style={"color":"#FBC02D",
-                               "background-color": "light"}),
-                html.P(f"{int(conlavadora_s):,}", style={"font-size":10}),                      
-       ]),style={ "background-color": "light"}),
+         dbc.Button((["", html.H3(dbc.CardImg(src= "https://raw.githubusercontent.com/fdealbam/censo2020/main/laundry.svg?raw=true", 
+                                style={"color": "black",
+                                       "height" :"25px",
+                                      "background-clor": "light"})),
+                      html.H6(" Con lavadora ",
+                        style={"color":"black",
+                                "font-size":10,
+                                "background-color": "light"}),
+                 html.H4([(conlavadora_p),"%"],#"97%",
+                        style={"color":"#FBC02D",
+                                "background-color": "light"}),
+                 html.P(f"{int(conlavadora_s):,}", style={"font-size":10}),                      
+        ]),style={ "background-color": "light"}),
 
 
 #poner aqui bicicleta            
@@ -1743,8 +1742,11 @@ hogcensjefgender.update_traces(rotation=220,
 
 
 # identificadores
-
+#script src="https://kit.fontawesome.com/5af838325e.js" crossorigin="anonymous"
+#FONT_AWESOME = "https://raw.githubusercontent.com/FortAwesome/Font-Awesome-Pro/master/css/all.css?token=CF2BC7F5-DB01-4107-B1F0-4A52BD57E648"
 FONT_AWESOME = "https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+
+# crossorigin="anonymous"
 server = flask.Flask(__name__)    
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes. 
                                                 LUX, FONT_AWESOME], server=server)
